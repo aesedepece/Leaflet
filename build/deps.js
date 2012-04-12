@@ -51,6 +51,16 @@ var deps = {
 		src: ['layer/ImageOverlay.js'],
 		desc: 'Used to display an image over a particular rectangular area of the map.'
 	},
+	
+	TextOverlay: {
+		src: ['layer/TextOverlay.js'],
+		desc: 'Used to display a text over a particular point of the map.'
+	},
+	
+	DatamarkerOverlay: {
+		src: ['layer/DatamarkerOverlay.js'],
+		desc: 'Used to display figure representing data over a particular point of the map.'
+	},
 
 	Marker: {
 		src: ['layer/marker/Icon.js', 'layer/marker/Marker.js'],
