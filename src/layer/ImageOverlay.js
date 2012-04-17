@@ -1,9 +1,12 @@
 L.ImageOverlay = L.Class.extend({
 	includes: L.Mixin.Events,
 
-	initialize: function (/*String*/ url, /*LatLngBounds*/ bounds) {
+	initialize: function (/*String*/ url, /*LatLngBounds*/ bounds, /*Float*/ opacity) {
 		this._url = url;
 		this._bounds = bounds;
+		if(opacity === undefined || opacity > 1) opacity = 1;
+		else if(opacity < 0) opacity = 0;
+		this._opacity = opacity;
 	},
 
 	onAdd: function (map) {
@@ -38,6 +41,8 @@ L.ImageOverlay = L.Class.extend({
 			onload: L.Util.bind(this._onImageLoad, this),
 			src: this._url
 		});
+		
+		this._image.style.opacity = this._opacity;
 	},
 
 	_reset: function () {
