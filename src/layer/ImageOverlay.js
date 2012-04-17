@@ -43,6 +43,7 @@ L.ImageOverlay = L.Class.extend({
 		});
 		
 		this._image.style.opacity = this._opacity;
+		this._image.style.filter = "alpha(opacity="+ this._opacity*100 +")";
 	},
 
 	_reset: function () {
